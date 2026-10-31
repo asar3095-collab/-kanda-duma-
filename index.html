@@ -27,6 +27,7 @@ nav{background:#102d49;color:white}
 nav .wrap{display:flex;gap:8px;overflow:auto}
 nav button{background:transparent;border:0;color:white;padding:14px 16px;cursor:pointer;font-weight:600}
 nav button:hover,nav button.active{background:rgba(255,255,255,.12)}
+.admin-btn{margin-left:auto}
 main{padding:32px 20px}
 .hero{display:grid;grid-template-columns:1.5fr 1fr;gap:20px}
 .card{background:white;border:1px solid #d8dee6;border-radius:calc(14px * var(--site-radius-scale));padding:22px;box-shadow:0 6px 18px rgba(20,40,60,.06)}
@@ -57,6 +58,7 @@ footer{margin-top:40px;background:#102d49;color:white;padding:24px 20px}
  <button data-tab="sessions">Заседания</button>
  <button data-tab="government">Правительство</button>
  <button data-tab="deputies">Депутаты</button>
+ <button class="admin-btn" data-tab="admin">⚙ Админ-панель</button>
 </div></nav>
 <main class="wrap">
 <section id="home">
@@ -128,6 +130,26 @@ footer{margin-top:40px;background:#102d49;color:white;padding:24px 20px}
 <section id="deputies" class="hidden">
  <div class="card"><h2>Государственная Дума</h2><p>Парламентская система ещё формируется.</p><p class="meta">Выборы депутатов будут проведены после создания избирательной системы.</p></div>
 </section>
+
+<section id="admin" class="hidden">
+ <div class="card">
+  <span class="badge">АДМИНИСТРАТОР</span>
+  <h2 style="margin-top:12px">Админ-панель Республики Канда</h2>
+  <p class="meta">Управление содержимым официального портала.</p>
+  <div class="grid" style="margin-top:18px">
+   <button onclick="adminAction('Закон')" style="padding:14px;cursor:pointer">📜 Управление законами</button>
+   <button onclick="adminAction('Правительство')" style="padding:14px;cursor:pointer">🏛️ Правительство</button>
+   <button onclick="adminAction('Выборы')" style="padding:14px;cursor:pointer">🗳️ Выборы</button>
+   <button onclick="adminAction('Депутаты')" style="padding:14px;cursor:pointer">👥 Депутаты</button>
+   <button onclick="adminAction('Заседания')" style="padding:14px;cursor:pointer">📋 Заседания</button>
+   <button onclick="adminAction('Новости')" style="padding:14px;cursor:pointer">📰 Новости</button>
+  </div>
+  <div class="section" style="padding:16px;background:#eef2f6;border-radius:10px">
+   <b>Статус системы:</b> администратор активен<br>
+   <span class="meta">Изменения этой версии сохраняются в браузере устройства.</span>
+  </div>
+ </div>
+</section>
 </main>
 <footer><div class="wrap">© Республика Канда • Государственная Дума • Игровая государственная система</div></footer>
 </div>
@@ -136,6 +158,10 @@ function show(id){
  document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));
  document.getElementById(id).classList.remove('hidden');
  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+}
+function adminAction(name){
+ localStorage.setItem('kanda_admin_last_action',name);
+ alert(name+': раздел управления готов к настройке.');
 }
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.tab));
 </script>
