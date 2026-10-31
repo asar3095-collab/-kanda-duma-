@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Государственная Дума Республики Канда</title>
+<style>
+:root{
+ --site-primary:#173a5e; --site-secondary:#c9a44a; --site-background:#eef2f6;
+ --site-on-primary:#ffffff; --site-on-secondary:#17202a; --site-on-background:#17202a;
+ --site-font-body:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ --site-font-heading:Georgia,"Times New Roman",serif;
+ --site-heading-scale:1; --site-spacing-scale:1; --site-radius-scale:1;
+ --site-decoration-opacity:1;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--site-font-body);color:var(--site-on-background);background:var(--site-background)}
+#app{min-height:100vh;background-color:var(--site-background);border-radius:0}
+header{background:var(--site-primary);color:var(--site-on-primary);padding:28px calc(24px * var(--site-spacing-scale));}
+.wrap{max-width:1100px;margin:auto}
+.brand{display:flex;align-items:center;gap:16px}
+.emblem{width:58px;height:58px;border:2px solid var(--site-secondary);border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:25px;color:var(--site-secondary)}
+h1,h2,h3{font-family:var(--site-font-heading);margin:0 0 8px}
+h1{font-size:calc(30px * var(--site-heading-scale))}
+.sub{opacity:.8}
+nav{background:#102d49;color:white}
+nav .wrap{display:flex;gap:8px;overflow:auto}
+nav button{background:transparent;border:0;color:white;padding:14px 16px;cursor:pointer;font-weight:600}
+nav button:hover,nav button.active{background:rgba(255,255,255,.12)}
+main{padding:32px 20px}
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:20px}
+.card{background:white;border:1px solid #d8dee6;border-radius:calc(14px * var(--site-radius-scale));padding:22px;box-shadow:0 6px 18px rgba(20,40,60,.06)}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#e7f4ea;color:#17632d;font-weight:700;font-size:13px}
+.meta{color:#65717e;font-size:14px}
+.section{margin-top:24px}
+.doc{line-height:1.65}
+.signature{margin-top:25px;padding-top:18px;border-top:1px solid #d8dee6;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat b{font-size:27px;display:block;margin-top:5px}
+.hidden{display:none}
+footer{margin-top:40px;background:#102d49;color:white;padding:24px 20px}
+@media(max-width:760px){.hero,.grid{grid-template-columns:1fr}h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div id="app">
+<header><div class="wrap">
+  <div class="brand">
+    <div class="emblem">К</div>
+    <div><h1>Государственная Дума Республики Канда</h1><div class="sub">Официальный портал игровой страны • Столица — Кандалакша</div></div>
+  </div>
+</div></header>
+<nav><div class="wrap">
+ <button class="active" data-tab="home">Главная</button>
+ <button data-tab="laws">Законы</button>
+ <button data-tab="constitution">Конституция</button>
+ <button data-tab="sessions">Заседания</button>
+ <button data-tab="government">Правительство</button>
+ <button data-tab="deputies">Депутаты</button>
+</div></nav>
+<main class="wrap">
+<section id="home">
+ <div class="hero">
+  <div class="card">
+   <span class="badge">ОФИЦИАЛЬНО</span>
+   <h2 style="margin-top:12px">Добро пожаловать в Думу Канды</h2>
+   <p>Портал законодательной власти Республики Канда. Здесь публикуются Конституция, законы и протоколы заседаний.</p>
+  </div>
+  <div class="card"><h3>Последнее решение</h3><p><b>Заседание №1 закрыто</b></p><p class="meta">Конституция Республики Канда утверждена.</p></div>
+ </div>
+ <div class="section grid">
+  <div class="card stat"><span class="meta">Заседания</span><b>1</b></div>
+  <div class="card stat"><span class="meta">Конституция</span><b>Утверждена</b></div>
+  <div class="card stat"><span class="meta">Столица</span><b>Кандалакша</b></div>
+ </div>
+</section>
+
+<section id="laws" class="hidden">
+ <div class="card"><span class="badge">УТВЕРЖДЕНО</span><h2 style="margin-top:12px">Конституция Республики Канда</h2>
+ <p class="meta">Документ №1 • Подписан Президентом Драчёвым А. В.</p>
+ <div class="doc">
+ <h3>Основные положения</h3>
+ <p><b>Статья 1.</b> Республика Канда — суверенное государство.</p>
+ <p><b>Статья 2.</b> Столица Республики Канда — город Кандалакша.</p>
+ <p><b>Статья 3.</b> Государственная власть осуществляется на основе Конституции и законов.</p>
+ <p><b>Статья 4.</b> Президент является главой государства.</p>
+ <p><b>Статья 5.</b> Президент избирается гражданами Республики Канда.</p>
+ <p><b>Статья 6.</b> Президент назначает Премьер-министра в соответствии с Конституцией.</p>
+ <p><b>Статья 7.</b> Правительство является высшим исполнительным органом государственной власти.</p>
+ <p><b>Статья 8.</b> Правительство возглавляет Премьер-министр.</p>
+ <p><b>Статья 9.</b> Министры руководят соответствующими государственными направлениями.</p>
+ <p><b>Статья 10.</b> Законодательную власть осуществляет Государственная Дума Республики Канда.</p>
+ <p><b>Статья 11.</b> Депутаты Государственной Думы избираются гражданами.</p>
+ <p><b>Статья 12.</b> Государственная Дума принимает законы Республики Канда.</p>
+ <p><b>Статья 13.</b> Судебная власть осуществляется независимыми судами.</p>
+ <p><b>Статья 14.</b> Судьи осуществляют правосудие в соответствии с Конституцией и законами.</p>
+ <p><b>Статья 15.</b> Все граждане Республики Канда обладают равными правами и свободами независимо от происхождения, должности, социального положения или места проживания. Государство обеспечивает защиту прав граждан.</p>
+ <p><b>Статья 16.</b> Гражданам Республики Канда гарантируются основные права и свободы.</p>
+ <div class="signature">Президент Республики Канда<br>Драчёв А. В.<br><span class="meta">Статус: утверждено</span></div>
+ </div></div>
+</section>
+
+<section id="constitution" class="hidden">
+ <div class="card"><h2>Конституция</h2><p>Полный текст опубликован в разделе «Законы».</p><button onclick="show('laws')" style="padding:10px 15px">Открыть документ</button></div>
+</section>
+
+<section id="sessions" class="hidden">
+ <div class="card"><span class="badge">ЗАКРЫТО</span><h2 style="margin-top:12px">Заседание №1</h2><p>Рассмотрен и утверждён проект Конституции Республики Канда.</p><p class="meta">Подписал: Драчёв А. В.</p><h3>Итог</h3><p>Конституция вступила в силу в рамках игровой системы.</p></div>
+</section>
+
+<section id="government" class="hidden">
+ <div class="card"><h2>Правительство Республики Канда</h2><div class="grid" style="margin-top:18px">
+  <div><b>Премьер-министр</b><br>Александр Жириновский</div>
+  <div><b>Министр финансов</b><br>Ирина Воронцова</div>
+  <div><b>МВД</b><br>Дмитрий Орлов</div>
+  <div><b>Оборона</b><br>Максим Корнеев</div>
+  <div><b>Юстиция</b><br>Елена Соколова</div>
+  <div><b>Здравоохранение</b><br>Андрей Беляев</div>
+  <div><b>Образование</b><br>Наталья Романова</div>
+  <div><b>Транспорт</b><br>Сергей Крылов</div>
+  <div><b>Строительство</b><br>Виктор Морозов</div>
+  <div><b>Экономика</b><br>Алексей Громов</div>
+  <div><b>Цифровое развитие</b><br>Мария Лебедева</div>
+  <div><b>Культура и спорт</b><br>Иван Кузнецов</div>
+ </div></div>
+</section>
+
+<section id="deputies" class="hidden">
+ <div class="card"><h2>Государственная Дума</h2><p>Парламентская система ещё формируется.</p><p class="meta">Выборы депутатов будут проведены после создания избирательной системы.</p></div>
+</section>
+</main>
+<footer><div class="wrap">© Республика Канда • Государственная Дума • Игровая государственная система</div></footer>
+</div>
+<script>
+function show(id){
+ document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.tab));
+</script>
+</body>
+</html>
